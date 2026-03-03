@@ -271,20 +271,20 @@ export const gallery = {
   ],
   carnet: {
   title: "Carnet de voyage — Nice",
-  cover: "/carnet/cover.jpg",
+  cover: "/carnet/cover.webp",
   pages: [
-    "/carnet/1.jpg",
-    "/carnet/2.jpg",
-    "/carnet/3.jpg",
-    "/carnet/4.jpg",
-    "/carnet/5.jpg",
-    "/carnet/6.jpg",
-    "/carnet/7.jpg",
-    "/carnet/8.jpg",
-    "/carnet/9.jpg",
-    "/carnet/10.jpg"
+    "/carnet/1.webp",
+    "/carnet/2.webp",
+    "/carnet/3.webp",
+    "/carnet/4.webp",
+    "/carnet/5.webp",
+    "/carnet/6.webp",
+    "/carnet/7.webp",
+    "/carnet/8.webp",
+    "/carnet/9.webp",
+    "/carnet/10.webp"
   ],
-  back: "/carnet/back.jpg" // optionnel, enlève si tu n’en as pas
+  back: "/carnet/back.webp" 
   },
   qrShowcase: "/qr/qr1.jpg"
 };

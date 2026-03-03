@@ -1,13 +1,16 @@
+import type { Metadata } from "next";
 import Image from "next/image";
+
 import { Container } from "@/components/Container";
 import { Section } from "@/components/Section";
 import { GalleryGrid } from "@/components/GalleryGrid";
 import { BookLightbox } from "@/components/BookLightbox";
 import { gallery } from "@/data/portfolio";
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Galerie",
-  description: "Logos, affiches, cartes de visite, carnet de voyage et QR codes."
+  description:
+    "Logos, affiches, cartes de visite, carnet de voyage et QR codes.",
 };
 
 export default function GalleryPage() {
@@ -15,8 +18,9 @@ export default function GalleryPage() {
     <main className="py-14">
       <Container>
         <Section title="Galerie">
+          {/* LOGOS */}
           <div id="logos" className="scroll-mt-28">
-            <h2 className="text-xl font-semibold">LOGO</h2>
+            <h2 className="text-xl font-semibold">Logos</h2>
             <div className="mt-6">
               <GalleryGrid
                 items={gallery.logos}
@@ -27,6 +31,7 @@ export default function GalleryPage() {
             </div>
           </div>
 
+          {/* AFFICHES */}
           <div id="affiches" className="mt-12 scroll-mt-28">
             <h2 className="text-xl font-semibold">Affiches</h2>
             <div className="mt-6">
@@ -39,6 +44,7 @@ export default function GalleryPage() {
             </div>
           </div>
 
+          {/* CARTES DE VISITE */}
           <div id="cartes" className="mt-12 scroll-mt-28">
             <h2 className="text-xl font-semibold">Cartes de visite</h2>
             <p className="mt-2 text-neutral-600">
@@ -54,10 +60,11 @@ export default function GalleryPage() {
             </div>
           </div>
 
+          {/* CARNET */}
           <div id="carnet" className="mt-12 scroll-mt-28">
             <h2 className="text-xl font-semibold">Carnet de voyage</h2>
             <p className="mt-2 max-w-2xl text-neutral-600">
-              Couverture mise en valeur au centre — cliquez pour feuilleter les pages.
+              Cliquez sur la couverture pour feuilleter les pages.
             </p>
 
             <BookLightbox
@@ -68,8 +75,9 @@ export default function GalleryPage() {
             />
           </div>
 
+          {/* QR CODE */}
           <div id="qr" className="mt-12 scroll-mt-28">
-            <h2 className="text-xl font-semibold">QR CODE</h2>
+            <h2 className="text-xl font-semibold">QR Code</h2>
 
             <div className="mt-6 overflow-hidden rounded-3xl border border-neutral-200 bg-white shadow-soft">
               <div className="relative aspect-[21/9]">
@@ -79,11 +87,12 @@ export default function GalleryPage() {
                   fill
                   className="object-cover"
                   sizes="100vw"
+                  priority
                 />
               </div>
               <div className="p-6">
                 <p className="text-sm text-neutral-600">
-                  Remplacez l’image par votre composition finale dans{" "}
+                  Remplace l’image dans{" "}
                   <span className="font-mono text-xs">/public/qr/</span>.
                 </p>
               </div>

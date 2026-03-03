@@ -20,7 +20,6 @@ export function BookLightbox({ title, cover, pages, back }: Props) {
   const [open, setOpen] = useState(false);
   const [index, setIndex] = useState(0);
 
-  const dialogRef = useRef<HTMLDivElement | null>(null);
   const closeBtnRef = useRef<HTMLButtonElement | null>(null);
   const lastActiveRef = useRef<HTMLElement | null>(null);
 
@@ -47,12 +46,11 @@ export function BookLightbox({ title, cover, pages, back }: Props) {
     closeBtnRef.current?.focus();
 
     return () => document.removeEventListener("keydown", onKeyDown);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [open]);
 
   useEffect(() => {
-    if (!open) {
-      lastActiveRef.current?.focus?.();
-    }
+    if (!open) lastActiveRef.current?.focus?.();
   }, [open]);
 
   return (
@@ -64,7 +62,7 @@ export function BookLightbox({ title, cover, pages, back }: Props) {
         <button
           type="button"
           onClick={() => openAt(0)}
-          className="group mt-5 w-full max-w-[520px] overflow-hidden rounded-3xl border border-neutral-200 bg-white shadow-soft transition hover:-translate-y-0.5 hover:shadow-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-neutral-900"
+          className="group mt-5 w-[min(90vw,360px)] overflow-hidden rounded-3xl border border-neutral-200 bg-white shadow-soft transition hover:-translate-y-0.5 hover:shadow-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-neutral-900"
         >
           <div className="relative aspect-[3/4]">
             <Image
@@ -72,7 +70,7 @@ export function BookLightbox({ title, cover, pages, back }: Props) {
               alt={`Couverture — ${title}`}
               fill
               className="object-cover transition-transform duration-300 group-hover:scale-[1.02]"
-              sizes="(max-width: 768px) 90vw, 520px"
+              sizes="(max-width: 640px) 90vw, 360px"
               priority
             />
           </div>
@@ -93,10 +91,16 @@ export function BookLightbox({ title, cover, pages, back }: Props) {
 
       {/* Modal */}
       {open && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60">
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 p-4"
+          onClick={close}
+          role="dialog"
+          aria-modal="true"
+          aria-label={title}
+        >
           <div
-            ref={dialogRef}
             className="w-[min(1000px,90vw)] max-h-[85vh] overflow-hidden rounded-3xl border border-neutral-200 bg-white shadow-2xl"
+            onClick={(e) => e.stopPropagation()}
           >
             {/* Header */}
             <div className="flex items-center justify-between border-b border-neutral-200 p-4">
@@ -139,7 +143,7 @@ export function BookLightbox({ title, cover, pages, back }: Props) {
                 <div className="flex h-[70vh] items-center justify-center rounded-2xl bg-neutral-50">
                   <Image
                     src={all[index]}
-                    alt={`${title} — ${index}`}
+                    alt={`${title} — ${index === 0 ? "Couverture" : `Page ${index}`}`}
                     width={1000}
                     height={1400}
                     className="max-h-full w-auto object-contain"
@@ -152,26 +156,21 @@ export function BookLightbox({ title, cover, pages, back }: Props) {
               </div>
 
               {/* Miniatures */}
-              <div className="border-t border-neutral-200 p-4 lg:border-l lg:border-t-0 overflow-y-auto max-h-[70vh]">
+              <div className="max-h-[70vh] overflow-y-auto border-t border-neutral-200 p-4 lg:border-l lg:border-t-0">
                 <p className="text-sm font-semibold">Pages</p>
                 <div className="mt-3 grid grid-cols-3 gap-3">
                   {all.map((src, i) => (
                     <button
-                      key={src}
+                      key={`${src}-${i}`}
                       onClick={() => setIndex(i)}
                       className={`overflow-hidden rounded-xl border ${
-                        i === index
-                          ? "border-neutral-900"
-                          : "border-neutral-200"
+                        i === index ? "border-neutral-900" : "border-neutral-200"
                       }`}
+                      type="button"
+                      aria-label={i === 0 ? "Couverture" : `Aller à la page ${i}`}
                     >
                       <div className="relative aspect-[3/4]">
-                        <Image
-                          src={src}
-                          alt=""
-                          fill
-                          className="object-cover"
-                        />
+                        <Image src={src} alt="" fill className="object-cover" />
                       </div>
                     </button>
                   ))}
