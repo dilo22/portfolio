@@ -231,7 +231,8 @@ export const gallery = {
   "/logos/logo-03.jpg",
   "/logos/logo-04.png",
   "/logos/logo-05.jpg",
-  "/logos/logo-06.jpg"],
+  "/logos/logo-06.jpg",
+  "/logos/logo-07.jpg"],
   posters: [
   "/posters/poster-01.jpg",
   "/posters/poster-02.jpg",
@@ -267,6 +268,7 @@ export const gallery = {
     "/cards/carte 17.jpg",
     "/cards/carte 18.jpg",
     "/cards/carte 19.jpg",
+    "/cards/carte 20.jpg"
 
   ],
   carnet: {

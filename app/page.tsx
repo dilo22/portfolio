@@ -7,8 +7,25 @@ import { ProjectCard } from "@/components/ProjectCard";
 import { portfolio, projects } from "@/data/portfolio";
 
 export default function HomePage() {
-  const technique = projects.filter((p) => p.category === "Technique").slice(0, 6);
+  const technique = projects
+    .filter((p) => p.category === "Technique")
+    .slice(0, 6);
+
   const web = projects.filter((p) => p.category === "Web").slice(0, 6);
+
+  // Sélection personnalisée (2 techniques + 2 web)
+  const raytracing =
+    projects.find((p) => p.slug === "raytracing") ??
+    projects.find((p) => p.title.toLowerCase().includes("raytracing"));
+
+  const compilateur =
+    projects.find((p) => p.slug === "compilateur-algo-ram") ??
+    projects.find((p) => p.slug === "compilateur") ??
+    projects.find((p) => p.title.toLowerCase().includes("compilateur"));
+
+  const selected = [raytracing, compilateur, ...web.slice(0, 2)].filter(
+    (p): p is (typeof projects)[number] => Boolean(p)
+  );
 
   return (
     <main>
@@ -24,9 +41,8 @@ export default function HomePage() {
                 HIBA Hedil
               </h1>
               <p className="mt-4 max-w-xl text-neutral-600">
-                Projets techniques, web, et créations visuelles. Un
-                style propre, une exécution soignée, et une attention forte aux
-                détails.
+                Projets techniques, web, et créations visuelles. Un style propre,
+                une exécution soignée, et une attention forte aux détails.
               </p>
 
               <div className="mt-8 flex flex-wrap gap-3">
@@ -63,8 +79,9 @@ export default function HomePage() {
                     Tout voir
                   </Link>
                 </div>
+
                 <div className="mt-5 grid gap-4 sm:grid-cols-2">
-                  {[...technique.slice(0, 2), ...web.slice(0, 2)].map((p) => (
+                  {selected.map((p) => (
                     <Link
                       key={p.slug}
                       href={`/projects/${p.slug}`}
@@ -77,7 +94,6 @@ export default function HomePage() {
                           fill
                           className="object-cover transition group-hover:scale-[1.02]"
                           sizes="(max-width: 640px) 100vw, 50vw"
-                          priority={false}
                         />
                       </div>
                       <p className="mt-3 font-medium text-neutral-900">
@@ -127,10 +143,11 @@ export default function HomePage() {
       </Section>
 
       {/* Galerie */}
+      {/* Galerie */}
       <Section
         id="galerie"
         title="Galerie"
-        description="Logos, affiches, et une vitrine QR codes."
+        description="Logos, affiches, cartes de visite, et carnet de voyage interactif."
       >
         <div className="grid gap-6 lg:grid-cols-3">
           <Link
@@ -142,9 +159,10 @@ export default function HomePage() {
             </p>
             <p className="mt-2 text-lg font-semibold">Identités & marques</p>
             <p className="mt-2 text-sm text-neutral-600">
-              Une sélection de logos (placeholders).
+              Logos et explorations graphiques pour des projets et des clients.
             </p>
           </Link>
+
           <Link
             href="/gallery#affiches"
             className="rounded-3xl border border-neutral-200 bg-white/70 p-6 shadow-sm backdrop-blur transition hover:-translate-y-0.5 hover:shadow-soft"
@@ -154,23 +172,50 @@ export default function HomePage() {
             </p>
             <p className="mt-2 text-lg font-semibold">Print & visuels</p>
             <p className="mt-2 text-sm text-neutral-600">
-              Affiches (placeholders) en grille.
+              Affiches, flyers et compositions pour réseaux sociaux et événements.
             </p>
           </Link>
+
+          <Link
+            href="/gallery#cartes"
+            className="rounded-3xl border border-neutral-200 bg-white/70 p-6 shadow-sm backdrop-blur transition hover:-translate-y-0.5 hover:shadow-soft"
+          >
+            <p className="text-xs font-semibold tracking-wide text-neutral-500">
+              Cartes
+            </p>
+            <p className="mt-2 text-lg font-semibold">Cartes de visite</p>
+            <p className="mt-2 text-sm text-neutral-600">
+              Designs recto/verso, variantes et déclinaisons prêtes à imprimer.
+            </p>
+          </Link>
+
+          <Link
+            href="/gallery#carnet"
+            className="rounded-3xl border border-neutral-200 bg-white/70 p-6 shadow-sm backdrop-blur transition hover:-translate-y-0.5 hover:shadow-soft"
+          >
+            <p className="text-xs font-semibold tracking-wide text-neutral-500">
+              Carnet
+            </p>
+            <p className="mt-2 text-lg font-semibold">Carnet de voyage</p>
+            <p className="mt-2 text-sm text-neutral-600">
+              Présentation interactive en mode “livre” : couverture + pages à feuilleter.
+            </p>
+          </Link>
+
           <Link
             href="/gallery#qr"
-            className="rounded-3xl border border-neutral-200 bg-white/70 p-6 shadow-sm backdrop-blur transition hover:-translate-y-0.5 hover:shadow-soft"
+            className="rounded-3xl border border-neutral-200 bg-white/70 p-6 shadow-sm backdrop-blur transition hover:-translate-y-0.5 hover:shadow-soft lg:col-span-2"
           >
             <p className="text-xs font-semibold tracking-wide text-neutral-500">
               QR CODE
             </p>
             <p className="mt-2 text-lg font-semibold">Vitrine QR</p>
             <p className="mt-2 text-sm text-neutral-600">
-              Grande image + explication.
+              Exemples de visuels QR pour campagnes, cartes, menus et accès rapides.
             </p>
           </Link>
         </div>
-      </Section>
+</Section>
     </main>
   );
 }

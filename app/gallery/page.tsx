@@ -90,12 +90,7 @@ export default function GalleryPage() {
                   priority
                 />
               </div>
-              <div className="p-6">
-                <p className="text-sm text-neutral-600">
-                  Remplace l’image dans{" "}
-                  <span className="font-mono text-xs">/public/qr/</span>.
-                </p>
-              </div>
+              
             </div>
           </div>
         </Section>
