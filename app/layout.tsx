@@ -11,11 +11,15 @@ const inter = Inter({
   variable: "--font-inter"
 });
 
+
 export const metadata: Metadata = {
   metadataBase: new URL("https://example.vercel.app"),
   title: {
     default: "HIBA Hedil — Portfolio",
     template: "%s · HIBA Hedil"
+  },
+  icons:{
+    icon:"/favicon.ico",
   },
   description: "Portfolio — Projets techniques, web, et créations visuelles",
   openGraph: {
