@@ -85,7 +85,7 @@ export default function GalleryPage() {
                   src={gallery.qrShowcase}
                   alt="Vitrine QR codes"
                   fill
-                  className="object-cover"
+                  className="object-contain"
                   sizes="100vw"
                   priority
                 />
