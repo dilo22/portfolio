@@ -56,15 +56,40 @@ export default function HomePage() {
               </div>
 
               <div className="mt-8 grid max-w-xl grid-cols-2 gap-4 text-sm text-neutral-600">
-                <div className="rounded-2xl border border-neutral-200 bg-white/70 p-4 shadow-sm backdrop-blur">
-                  <p className="font-medium text-neutral-900">Focus</p>
-                  <p className="mt-1">Interfaces, algorithmique, outils pro.</p>
-                </div>
-                <div className="rounded-2xl border border-neutral-200 bg-white/70 p-4 shadow-sm backdrop-blur">
-                  <p className="font-medium text-neutral-900">Stack</p>
-                  <p className="mt-1">Python, C/C++, Web, DB.</p>
-                </div>
+  
+              <div className="rounded-2xl border border-neutral-200 bg-white/70 p-4 shadow-sm backdrop-blur">
+                <p className="font-medium text-neutral-900">Algorithmique</p>
+                <p className="mt-1">
+                  J’explore la logique et les structures de l’informatique pour concevoir
+                  des applications et programmes techniques solides et efficaces.
+                </p>
               </div>
+
+              <div className="rounded-2xl border border-neutral-200 bg-white/70 p-4 shadow-sm backdrop-blur">
+                <p className="font-medium text-neutral-900">Développement Web</p>
+                <p className="mt-1">
+                  Next.js, JavaScript / TypeScript, Python, bases de données et APIs pour
+                  créer des applications web modernes et performantes.
+                </p>
+              </div>
+
+              <div className="rounded-2xl border border-neutral-200 bg-white/70 p-4 shadow-sm backdrop-blur">
+                <p className="font-medium text-neutral-900">Création visuelle</p>
+                <p className="mt-1">
+                  Photoshop, montage vidéo et conception graphique pour créer des visuels,
+                  identités et contenus numériques complets.
+                </p>
+              </div>
+
+              <div className="rounded-2xl border border-neutral-200 bg-white/70 p-4 shadow-sm backdrop-blur">
+                <p className="font-medium text-neutral-900">SEO & visibilité</p>
+                <p className="mt-1">
+                  Optimisation SEO, structure des pages, performance web et bonnes
+                  pratiques pour améliorer la visibilité des projets.
+                </p>
+              </div>
+
+            </div>
             </div>
 
             <div className="relative">
