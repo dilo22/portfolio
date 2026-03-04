@@ -41,8 +41,9 @@ export default function HomePage() {
                 HIBA Hedil
               </h1>
               <p className="mt-4 max-w-xl text-neutral-600">
-                Projets techniques, web, et créations visuelles. Un style propre,
-                une exécution soignée, et une attention forte aux détails.
+                Je conçois des projets techniques, des applications web et des créations visuelles où la créativité guide chaque ligne de code.
+                J’aime transformer des idées en expériences concrètes, mêler logique et imagination, et donner vie à des interfaces qui ont du caractère.
+                Du code propre, oui, mais surtout des solutions originales, pensées avec précision et une vraie attention aux détails.
               </p>
 
               <div className="mt-8 flex flex-wrap gap-3">

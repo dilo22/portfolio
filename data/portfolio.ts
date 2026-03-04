@@ -268,7 +268,8 @@ export const gallery = {
     "/cards/carte 17.jpg",
     "/cards/carte 18.jpg",
     "/cards/carte 19.jpg",
-    "/cards/carte 20.jpg"
+    "/cards/carte 20.jpg",
+    "/cards/carte 21.jpg"
 
   ],
   carnet: {

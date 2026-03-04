@@ -47,9 +47,6 @@ export default function GalleryPage() {
           {/* CARTES DE VISITE */}
           <div id="cartes" className="mt-12 scroll-mt-28">
             <h2 className="text-xl font-semibold">Cartes de visite</h2>
-            <p className="mt-2 text-neutral-600">
-              Grille de {gallery.businessCards.length} images.
-            </p>
             <div className="mt-6">
               <GalleryGrid
                 items={gallery.businessCards}
