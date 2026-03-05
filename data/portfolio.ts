@@ -6,6 +6,7 @@ export type Project = {
   category: ProjectCategory;
   shortDescription: string;
   longDescription: string;
+  extendedDescription? : string;
   tech: string[];
   githubUrl: string;
   imagePath: string;
@@ -62,22 +63,42 @@ Il démontre ma capacité à concevoir un système cohérent combinant stratégi
     tags: ["Python", "Tkinter", "OOP", "Game"]
   },
   {
-    title: "Robowars – Jeu de stratégie et combat de robots",
-    category: "Technique",
-    shortDescription:
-      "Robots autonomes, tactiques, mines, multijoueur réseau.",
-    longDescription:`Développement d’un jeu de guerre stratégique mettant en scène des robots autonomes capables d’adopter différentes tactiques de combat.
+  title: "Robowars – Jeu de stratégie et combat de robots",
+  category: "Technique",
+  shortDescription:
+    "Robots autonomes, tactiques, mines, multijoueur réseau.",
+  longDescription: `Développement d’un jeu de guerre stratégique mettant en scène des robots autonomes capables d’adopter différentes tactiques de combat.
 Le joueur peut configurer le comportement des robots : détection d’ennemis à proximité, poursuite, attaque à distance ou pose de mines stratégiques.
 
 Le jeu intègre également une fonctionnalité réseau permettant le jeu en ligne, ajoutant une dimension multijoueur et compétitive.
 
 Réalisé en Python avec Tkinter, ce projet met en avant la gestion de logique comportementale (IA simple), la détection d’environnement, la coordination d’actions en temps réel et l’implémentation d’une communication réseau.
 Il démontre ma capacité à développer des systèmes interactifs combinant stratégie, programmation orientée objet et gestion d’événements.`,
-    tech: ["Python", "Tkinter", "Réseau"],
-    githubUrl: "https://github.com/dilo22/robowars",
-    imagePath: "/projects/robowars.png",
-    tags: ["Python", "Tkinter", "IA simple", "Network"]
-  },
+
+  extendedDescription: `Objectif : programmer des robots de combat et les faire s’affronter dans une arène sous forme de grille (30 × 20) comportant des obstacles. Chaque joueur charge un programme décrivant le comportement de son robot, puis la partie se déroule automatiquement : tous les robots exécutent leurs instructions de manière synchrone, pas à pas. Le vainqueur est le dernier robot encore fonctionnel (des ex æquo sont possibles).
+
+Programmation et stratégie
+Chaque robot est piloté par un fichier texte (.rbt) composé d’une ligne d’information, d’une instruction de “circuit de secours”, puis d’une séquence de 5 à 20 pas. Une fois la fin du programme atteinte, l’exécution boucle au début. Les actions disponibles couvrent déplacement, combat et tactiques :
+- DD / AL : déplacements (déterministe ou aléatoire) en tenant compte des cases libres,
+- PS / FT : poursuite ou fuite par rapport à l’adversaire le plus proche (PS/FT peuvent se déplacer en diagonale),
+- MI : pose de mines (très impactantes sur l’énergie),
+- TH / TV : tirs horizontaux/verticaux stoppés par la première cible rencontrée,
+- IN : invisibilité, contre-mesure coûteuse mais perturbante,
+- TT : test de proximité conditionnant l’action suivante (comportement “si… alors… sinon…” en fonction d’une distance de repérage configurable).
+
+Gestion de l’énergie et rapport coût/efficacité
+Chaque instruction consomme une quantité d’énergie différente, ce qui crée un vrai dilemme de conception : un robot agressif peut éliminer vite, mais risque de s’épuiser ; un robot économe peut survivre longtemps, mais manquer d’impact. Les mines infligent de lourds dégâts et introduisent une mécanique supplémentaire : lorsqu’un robot marche sur une mine, il perd de l’énergie et un pas de son programme est remplacé par l’instruction du circuit de secours, ce qui modifie dynamiquement son comportement au cours de la partie.
+
+Fonctionnalités de l’application
+L’application permet de sélectionner une configuration de terrain (obstacles via fichier de configuration), de placer les robots, d’associer à chacun un programme et une énergie initiale, de régler une distance de repérage, puis de suivre visuellement l’évolution de la partie. L’interface inclut des informations de suivi (état/énergie, actions en cours), une aide générale et contextuelle accessible à tout moment, et la possibilité de mettre la partie en pause puis de la reprendre.
+
+Ce projet met en avant la modélisation orientée objet (robots, arène, obstacles, mines, exécution des programmes), la gestion d’événements et de l’affichage avec Tkinter, ainsi que la conception d’une simulation synchronisée “pas à pas” avec des règles de gameplay précises et testables.`,
+
+  tech: ["Python", "Tkinter", "Réseau"],
+  githubUrl: "https://github.com/dilo22/robowars",
+  imagePath: "/projects/robowars.png",
+  tags: ["Python", "Tkinter", "IA simple", "Network"]
+},
   {
     title: "Bateau – Simulation physique en C++",
     category: "Technique",
@@ -127,32 +148,58 @@ Ce projet met en avant la conception d’une architecture modulaire, la gestion 
     tags: ["Python", "Tkinter", "Modulaire", "App suite"]
   },
   {
-    title: "Raytracing – Moteur de rendu 3D en Python",
-    category: "Technique",
-    shortDescription:
-      "Raytracing récursif, intersections, ombres, Phong, surfaces réfléchissantes.",
-    longDescription:`Développement d’un moteur de rendu 3D basé sur le principe du raytracing récursif, réalisé en Python avec les bibliothèques NumPy et PIL.
+  title: "Raytracing – Moteur de rendu 3D en Python",
+  category: "Technique",
+  shortDescription:
+    "Raytracing récursif, intersections, ombres, Phong, surfaces réfléchissantes.",
+  longDescription: `Développement d’un moteur de rendu 3D basé sur le principe du raytracing récursif, réalisé en Python avec les bibliothèques NumPy et PIL.
 
 Le projet consiste à modéliser l’interaction de la lumière avec des objets (sphères, plans…) en simulant la propagation des rayons lumineux : calcul des intersections, gestion des ombres portées, application du modèle d’illumination de Phong (réflexions diffuses et spéculaires), surfaces réfléchissantes et rendu récursif.
 
 L’architecture repose sur une conception orientée objet structurée (vecteurs, couleurs, objets, lumières, caméra, scène), permettant une implémentation modulaire et évolutive du moteur graphique.
 
 Ce projet met en avant mes compétences en mathématiques appliquées (géométrie vectorielle), algorithmique avancée, programmation orientée objet et conception d’un système graphique complet à partir de principes physiques simplifiés.`,
-    tech: ["Python", "NumPy", "PIL"],
-    githubUrl: "https://github.com/dilo22/Raytracing",
-    imagePath: "/projects/raytracing.png",
-    tags: ["Raytracing", "Maths", "NumPy", "OOP"]
-  },
+
+  extendedDescription: `Ce projet s’inscrit dans le cadre d’une étude en infographie 3D visant à illustrer les principes fondamentaux du lancer de rayons (raytracing). L’objectif est de générer une image 2D réaliste à partir d’une scène 3D en simulant le comportement simplifié de la lumière : des rayons sont émis depuis la caméra, rencontrent des objets, puis peuvent être réfléchis ou absorbés selon les propriétés des surfaces.
+
+Le modèle repose sur des hypothèses classiques de l’optique simplifiée : propagation rectiligne de la lumière dans des milieux homogènes, interaction uniquement avec les surfaces des objets et approximation de certains phénomènes physiques complexes comme la diffraction ou la polarisation.
+
+La scène 3D est composée de plusieurs éléments principaux : des objets géométriques (sphères, plans), des matériaux définissant les propriétés visuelles des surfaces, une caméra permettant de projeter la scène sur un plan de vue, et des sources lumineuses responsables de l’éclairage.
+
+Le moteur de rendu a été conçu selon une architecture orientée objet structurée autour de plusieurs classes fondamentales : vecteurs (opérations mathématiques), couleurs, objets géométriques, lumières, caméra et scène. Cette organisation permet une implémentation modulaire, claire et évolutive du moteur.
+
+Le développement a été réalisé de manière incrémentale : mise en place du lancer de rayons de base, ajout du modèle d’éclairage de Phong pour les réflexions diffuses et spéculaires, gestion des ombres portées, puis implémentation du raytracing récursif afin de gérer les surfaces réfléchissantes.
+
+Ce projet met en avant mes compétences en géométrie vectorielle, en algorithmique et en conception de systèmes graphiques, tout en démontrant ma capacité à structurer un moteur de rendu 3D complet à partir de principes physiques simplifiés.`,
+
+  tech: ["Python", "NumPy", "PIL"],
+  githubUrl: "https://github.com/dilo22/Raytracing",
+  imagePath: "/projects/raytracing.png",
+  tags: ["Raytracing", "Maths", "NumPy", "OOP"]
+},
   {
-    title: "En Garde",
-    category: "Technique",
-    shortDescription:
-      "Prototype IHM du jeu En Garde! hot-seat, règles officielles, UI soignée.",
-    longDescription:`Développement d’un prototype d’interface pour le jeu En Garde ! (Reiner Knizia) permettant à deux joueurs de s’affronter en “hot seat” selon les règles officielles : déplacements par cartes, attaques/parades, attaques renforcées, charge et gestion du score jusqu’à 5 touches.
+  title: "En Garde",
+  category: "Technique",
+  shortDescription:
+    "Prototype IHM du jeu En Garde! hot-seat, règles officielles, UI soignée.",
+  longDescription: `Développement d’un prototype d’interface pour le jeu En Garde ! (Reiner Knizia) permettant à deux joueurs de s’affronter en “hot seat” selon les règles officielles : déplacements par cartes, attaques/parades, attaques renforcées, charge et gestion du score jusqu’à 5 touches.
 
-Réalisé en Python avec Tkinter et Pillow, le projet met l’accent sur une IHM claire et conviviale : représentation du plateau, des cartes et des pions, gestion des erreurs, suivi des manches, et personnalisation de l’interface (mise en page/visuels) avec conservation des préférences entre deux sessions.
+  Réalisé en Python avec Tkinter et Pillow, le projet met l’accent sur une IHM claire et conviviale : représentation du plateau, des cartes et des pions, gestion des erreurs, suivi des manches, et personnalisation de l’interface (mise en page/visuels) avec conservation des préférences entre deux sessions.
 
-Ce projet valorise mes compétences en conception d’interfaces, programmation orientée objet, modularité et ergonomie (feedback utilisateur, cohérence et robustesse).`,
+  Ce projet valorise mes compétences en conception d’interfaces, programmation orientée objet, modularité et ergonomie (feedback utilisateur, cohérence et robustesse).`,
+
+  extendedDescription: `Ce projet consiste en la conception et le développement d’un prototype d’interface graphique pour le jeu de société En Garde ! de Reiner Knizia, permettant à deux joueurs de s’affronter sur un même poste en mode “hot seat”, conformément aux règles officielles du jeu.
+
+  L’objectif principal est de proposer une interface simple, intuitive et conviviale permettant de simuler un duel d’escrime entre deux joueurs. Chaque joueur dispose d’une main de cartes numérotées de 1 à 5, utilisées pour se déplacer sur le plateau ou pour attaquer et se défendre.
+
+  Les déplacements des pions, les attaques, les parades, les attaques renforcées et les charges sont implémentés conformément aux règles du jeu. Lorsqu’une attaque n’est pas correctement parée, une touche est marquée et la manche prend immédiatement fin. La partie se poursuit jusqu’à ce qu’un joueur atteigne cinq touches.
+
+  L’interface représente visuellement le plateau, les pions et les cartes des joueurs. Les actions possibles sont guidées afin de limiter les erreurs. Un système de validation et de messages permet d’accompagner l’utilisateur en cas d’action invalide.
+
+  L’application inclut également des options de personnalisation de l’interface (visuels, disposition) dont les préférences sont sauvegardées entre deux sessions.
+
+  Le projet est développé en Python avec Tkinter pour l’interface graphique et Pillow pour la gestion des images. La conception repose sur la programmation orientée objet et une architecture modulaire afin de garantir lisibilité, robustesse et réutilisabilité du code.`,
+
     tech: ["Python", "Tkinter", "Pillow"],
     githubUrl: "https://github.com/dilo22/En-Garde",
     imagePath: "/projects/en-garde.png",
@@ -248,28 +295,28 @@ export const gallery = {
   "/posters/poster-12.jpg"
 ],
   businessCards: [
-    "/cards/carte 00.jpg",
-    "/cards/carte 01.jpg",
-    "/cards/carte 02.jpg",
-    "/cards/carte 03.jpg",
-    "/cards/carte 04.jpg",
-    "/cards/carte 05.jpg",
-    "/cards/carte 06.jpg",
-    "/cards/carte 07.jpg",
-    "/cards/carte 08.jpg",
-    "/cards/carte 09.jpg",
-    "/cards/carte 10.jpg",
-    "/cards/carte 11.jpg",
-    "/cards/carte 12.jpg",
-    "/cards/carte 13.jpg",
-    "/cards/carte 14.jpg",
-    "/cards/carte 15.jpg",
-    "/cards/carte 16.jpg",
-    "/cards/carte 17.jpg",
-    "/cards/carte 18.jpg",
-    "/cards/carte 19.jpg",
-    "/cards/carte 20.jpg",
-    "/cards/carte 21.jpg"
+    "/cards/carte00.jpg",
+    "/cards/carte01.jpg",
+    "/cards/carte02.jpg",
+    "/cards/carte03.jpg",
+    "/cards/carte04.jpg",
+    "/cards/carte05.jpg",
+    "/cards/carte06.jpg",
+    "/cards/carte07.jpg",
+    "/cards/carte08.jpg",
+    "/cards/carte09.jpg",
+    "/cards/carte10.jpg",
+    "/cards/carte11.jpg",
+    "/cards/carte12.jpg",
+    "/cards/carte13.jpg",
+    "/cards/carte14.jpg",
+    "/cards/carte15.jpg",
+    "/cards/carte16.jpg",
+    "/cards/carte17.jpg",
+    "/cards/carte18.jpg",
+    "/cards/carte19.jpg",
+    "/cards/carte20.jpg",
+    "/cards/carte21.jpg"
 
   ],
   carnet: {
