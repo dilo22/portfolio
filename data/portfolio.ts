@@ -133,15 +133,55 @@ Ce projet met en avant mes compétences en algorithmique, en géométrie computa
     tags: ["Algorithmique", "Géométrie", "Python", "Tkinter"]
   },
   {
-    title: "Dilo (mon AKA)",
-    category: "Technique",
-    shortDescription:
-      "Suite de mini-applications dans une interface unique (calculatrice, convertisseurs, jeux, QR, mdp…).",
-    longDescription:`Dilo (mon AKA) est un logiciel développé en Python avec Tkinter, regroupant un ensemble de mini-applications au sein d’une interface unique organisée autour d’un menu principal.
+  title: "Dilo (mon AKA)",
+  category: "Technique",
+  shortDescription:
+    "Suite de mini-applications dans une interface unique (outils, jeux, utilitaires).",
 
-L’application propose plusieurs outils et modules interactifs : calculatrice, convertisseur de devises, jeux, horloge, compteur de pièces, module DJ, espace de dessin, convertisseur MP3, générateur de QR code, générateur de mots de passe, classeur de couleurs, et bien d’autres.
+  longDescription: `Dilo est une application développée en Python avec Tkinter regroupant plusieurs mini-applications et outils interactifs au sein d’une interface unique organisée autour d’un menu principal.
 
-Ce projet met en avant la conception d’une architecture modulaire, la gestion d’interfaces multiples, l’organisation orientée objet ainsi que l’intégration de fonctionnalités variées au sein d’un même environnement logiciel cohérent.`,
+  Le logiciel propose différents utilitaires du quotidien tels que des outils de calcul, de conversion, de création ou encore de divertissement. L’objectif est de centraliser plusieurs fonctionnalités pratiques dans un seul environnement simple et accessible.
+
+  Ce projet met en avant la conception d’une architecture modulaire, la gestion de multiples interfaces graphiques et l’organisation du code en programmation orientée objet.`,
+
+  extendedDescription: `Dilo est une suite d’outils interactifs développée en Python avec Tkinter, conçue comme une plateforme regroupant plusieurs mini-applications dans une seule interface. L’application fonctionne autour d’un menu principal permettant d’accéder rapidement à différents modules utilitaires, créatifs et ludiques.
+
+  Parmi les fonctionnalités disponibles :
+
+  • Calculatrice : outil de calcul classique permettant d’effectuer des opérations arithmétiques rapidement.
+
+  • Convertisseur de devises : permet de convertir différentes monnaies pour obtenir leur équivalent instantanément.
+
+  • Jeu du serpent : mini-jeu inspiré du célèbre Snake où le joueur doit faire grandir son serpent sans entrer en collision.
+
+  • Caisse rapide : outil permettant de compter rapidement une somme d’argent en pièces et billets, utile pour vérifier une caisse ou calculer une monnaie.
+
+  • Liste de couleurs : catalogue de couleurs ; un double-clic sur une couleur permet de l’appliquer immédiatement en arrière-plan.
+
+  • Matrice de couleurs : affiche le code RGB et HEX d’une couleur ainsi qu’un aperçu visuel.
+
+  • Créateur de couleur : interface avec tirettes permettant de composer une couleur personnalisée à partir des valeurs Rouge, Vert et Bleu.
+
+  • Horloge multifonction : affiche l’heure et propose également un minuteur et un compte à rebours.
+
+  • Générateur de mots de passe : création de mots de passe sécurisés selon différents critères.
+
+  • Générateur de QR code : génération instantanée de QR codes à partir d’un lien ou d’un texte.
+
+  • Convertisseur YouTube : permet de convertir et récupérer du contenu audio depuis une vidéo.
+
+  • Lecteur audio : module permettant de lire des fichiers audio directement dans l’application.
+
+  • Dessin : espace de dessin inspiré d’un mini-Paint permettant de dessiner librement.
+
+  • Audio to Text : conversion d’un enregistrement audio en texte.
+
+  • Convertisseur WebP : conversion d’images WebP vers d’autres formats.
+
+  • Météo : affichage des conditions météorologiques pour une ville donnée.
+
+  Ce projet met en avant la conception d’une architecture logicielle modulaire capable d’intégrer de nombreux modules indépendants dans une même application. Il démontre également mes compétences en développement d’interfaces graphiques avec Tkinter, en organisation orientée objet et en intégration de fonctionnalités variées dans un environnement logiciel cohérent.`,
+
     tech: ["Python", "Tkinter"],
     githubUrl: "https://github.com/dilo22/Dilo",
     imagePath: "/projects/dilo.png",
