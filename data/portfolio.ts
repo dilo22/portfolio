@@ -100,38 +100,62 @@ Ce projet met en avant la modélisation orientée objet (robots, arène, obstacl
   tags: ["Python", "Tkinter", "IA simple", "Network"]
 },
   {
-    title: "Bateau – Simulation physique en C++",
-    category: "Technique",
-    shortDescription:
-      "Simulation de bateau avec moteur physique, obstacles, CMake, SFML.",
-    longDescription:`Développement d’un projet en C++ visant à simuler le mouvement réaliste d’un bateau en mer à l’aide d’un moteur physique.
-L’objectif est d’atteindre un point final tout en évitant les obstacles, en tenant compte des contraintes de déplacement et des interactions physiques.
+  title: "Simulation de bateau – Moteur physique 2D",
+  category: "Technique",
+  shortDescription:
+    "Simulation physique d’un bateau en C++ avec SFML et LibPhysics.",
 
-Le projet utilise libPhysics pour la gestion des calculs physiques et SFML pour l’affichage graphique et la gestion des interactions.
-Il a également été conçu dans une optique pédagogique afin de maîtriser l’outil CMake, la gestion de dépendances et la structuration d’un projet C++ multi-fichiers.
+  longDescription: `Projet de simulation physique réalisé en C++ visant à modéliser le déplacement d’un bateau dans un environnement 2D interactif.
 
-Ce travail met en avant mes compétences en programmation orientée objet en C++, en simulation physique, en intégration de bibliothèques externes et en organisation d’un projet logiciel professionnel.`,
-    tech: ["C++", "libPhysics", "SFML", "CMake"],
-    githubUrl: "https://github.com/dilo22/Bateau",
-    imagePath: "/projects/bateau.png",
-    tags: ["C++", "SFML", "Physics", "CMake"]
-  },
+L’application utilise la bibliothèque graphique SFML pour l’affichage et la gestion des interactions utilisateur, ainsi que le moteur LibPhysics pour calculer l’évolution dynamique du bateau. Le programme applique les principes fondamentaux de la dynamique afin de simuler les forces exercées sur le bateau, notamment la propulsion des hélices et les effets d’amortissement hydrodynamique.
+
+L’utilisateur peut piloter le bateau dans une scène graphique, observer son comportement physique et tenter d’atteindre un objectif de course défini dans l’environnement.`,
+
+  extendedDescription: `Ce projet a pour objectif de concevoir une simulation interactive de bateau en mer en appliquant les principes de la dynamique physique et de la programmation graphique en C++. L’application combine un moteur physique dédié (LibPhysics) et la bibliothèque SFML afin de simuler et visualiser le comportement d’un bateau dans un environnement 2D.
+
+Le moteur LibPhysics fournit un modèle dynamique du bateau à travers plusieurs composants essentiels. Le bateau est représenté par un "RigidBody", dont l’état cinématique comprend la position, la vitesse linéaire, la vitesse angulaire et l’orientation. À chaque étape de simulation, le moteur physique applique les forces agissant sur le bateau et met à jour son état dans le temps.
+
+Le comportement du bateau repose sur les principes fondamentaux de la dynamique : la somme des forces appliquées détermine l’accélération linéaire, tandis que les couples appliqués influencent la rotation autour de l’axe vertical (yaw). Les forces simulées incluent notamment la propulsion des hélices ainsi que l’amortissement hydrodynamique généré par l’eau.
+
+Les objets de la scène sont définis dans un repère physique (repère monde), tandis que leur affichage à l’écran nécessite une conversion vers un repère pixel correspondant à la résolution de la fenêtre graphique. La bibliothèque SFML est utilisée pour gérer la création de la fenêtre, les événements clavier/souris, la boucle de rendu et l’affichage du bateau en temps réel.
+
+Le projet inclut également la structuration du code autour de classes dédiées (gestion de la simulation, entités du jeu, interaction utilisateur) ainsi que la mise en place d’un objectif de course avec ligne de départ et ligne d’arrivée.
+
+Ce travail met en avant plusieurs compétences techniques : programmation orientée objet en C++, intégration de bibliothèques externes, simulation physique temps réel, gestion d’un moteur graphique 2D et organisation d’un projet logiciel avec CMake.`,
+
+  tech: ["C++", "SFML", "LibPhysics", "CMake"],
+  githubUrl: "https://github.com/dilo22/bateau",
+  imagePath: "/projects/bateau.png",
+  tags: ["C++", "Simulation", "Physique", "SFML"]
+},
   {
-    title: "Plus Court Chemin – Géométrie algorithmique",
-    category: "Technique",
-    shortDescription:
-      "JSON bâtiments, enveloppe convexe, subdivision trapézoïdale, graphe, chemin optimal.",
-    longDescription:`Développement d’une application en Python avec Tkinter permettant de calculer un plus court chemin entre deux points en évitant des obstacles.
+  title: "Plus Court Chemin – Géométrie algorithmique",
+  category: "Technique",
+  shortDescription:
+    "JSON bâtiments, enveloppe convexe, carte trapézoïdale, graphe, chemin optimal.",
+  longDescription: `Application de géométrie algorithmique en Python (Tkinter) permettant de planifier un plus court chemin dans un plan contenant des obstacles polygonaux, à partir d’un partitionnement du domaine.
 
-Le programme charge un fichier JSON contenant les bâtiments, calcule leur enveloppe convexe, génère une subdivision trapézoïdale de l’espace libre, puis construit un graphe reliant les zones accessibles.
-L’utilisateur sélectionne un point de départ et un point d’arrivée sur la carte, et l’algorithme détermine et affiche le chemin optimal évitant les bâtiments.
+Le programme charge un plan cadastral (données JSON de bâtiments), sélectionne une zone d’intérêt, approxime les obstacles par des enveloppes convexes, puis construit une carte trapézoïdale de l’espace libre par balayage (scanline).
 
-Ce projet met en avant mes compétences en algorithmique, en géométrie computationnelle et en structuration d’applications interactives.`,
-    tech: ["Python", "Tkinter", "Algo", "Géométrie"],
-    githubUrl: "https://github.com/dilo22/Plus-court-chemin",
-    imagePath: "/projects/plus-court-chemin.png",
-    tags: ["Algorithmique", "Géométrie", "Python", "Tkinter"]
-  },
+À partir de cette subdivision, un graphe planaire est généré afin de relier les zones navigables. L’utilisateur choisit un point de départ et un point d’arrivée, puis l’application calcule et affiche un chemin optimal (Dijkstra, ou A* selon la stratégie) en évitant les bâtiments.`,
+
+  extendedDescription: `Ce projet de géométrie algorithmique consiste à construire une application capable de planifier un (plus court) chemin dans un plan contenant des obstacles polygonaux, à partir d’un partitionnement du domaine.
+
+L’approche repose sur la notion d’espace de configuration C : les positions qui provoquent une intersection entre le mobile et un obstacle sont exclues (espace interdit), et on travaille uniquement dans l’espace libre Cf. Plutôt que de représenter directement un chemin, l’objectif est de construire une représentation structurée de l’espace libre, ce qui est particulièrement efficace lorsque la scène reste fixe et que plusieurs requêtes de chemin doivent être calculées.
+
+Les obstacles proviennent d’un plan cadastral réel (fichier JSON compressé) représentant les bâtiments de la ville de La Garde. Le programme charge et affiche ce plan, puis se concentre sur une zone sélectionnée (notamment les bâtiments du campus, dans une plage d’identifiants définie dans le code). Afin de simplifier les calculs, chaque bâtiment est ensuite approximé par une enveloppe convexe (plus précise qu’un simple rectangle englobant), ce qui facilite les traitements géométriques ultérieurs.
+
+Le cœur de la méthode est la construction d’une carte trapézoïdale de l’espace : le domaine est balayé par des “scanlines” passant par les sommets des polygones. Chaque ligne se prolonge (par exemple verticalement) jusqu’à rencontrer une arête ou la limite de la boîte englobante du domaine ; les portions situées à l’intérieur des obstacles sont éliminées, ce qui aboutit à une subdivision du plan en trapèzes représentant l’espace navigable.
+
+À partir de cette carte trapézoïdale, un graphe sous-jacent est construit pour supporter la recherche de chemin : chaque trapèze fournit des nœuds (milieux de bases, barycentre) et des arêtes reliant les zones adjacentes. Une fois ce graphe établi, l’utilisateur choisit un point de départ et un point d’arrivée, puis l’application calcule un chemin dans le graphe et l’affiche sur la carte. La recherche peut être réalisée avec Dijkstra (ou améliorée par A* selon la stratégie), afin d’obtenir un chemin optimal dans la structure discrétisée.
+
+Ce projet met en avant une implémentation modulaire en Python, la manipulation de données réelles (JSON cadastral), la géométrie computationnelle (convexité, intersections, subdivision) et la transformation d’un problème continu en problème de graphe pour résoudre efficacement la planification de trajectoire.`,
+
+  tech: ["Python", "Tkinter", "Algo", "Géométrie"],
+  githubUrl: "https://github.com/dilo22/Plus-court-chemin",
+  imagePath: "/projects/plus-court-chemin.png",
+  tags: ["Algorithmique", "Géométrie", "Python", "Tkinter"]
+},
   {
   title: "Dilo (mon AKA)",
   category: "Technique",
