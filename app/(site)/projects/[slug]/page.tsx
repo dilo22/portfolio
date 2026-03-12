@@ -68,13 +68,29 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
               ))}
             </div>
 
-            <div className="mt-6">
-              <Button className="w-full" asChild>
-                <a href={project.githubUrl} target="_blank" rel="noreferrer">
-                  Ouvrir sur GitHub
-                </a>
-              </Button>
-            </div>
+            <div className="mt-6 flex flex-col gap-3">
+
+  {project.demoUrl && (
+    <a
+      href={project.demoUrl}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="inline-flex w-full items-center justify-center rounded-xl border border-neutral-200 bg-white px-4 py-3 font-medium hover:bg-neutral-100"
+    >
+      Visiter le site
+    </a>
+  )}
+
+  <a
+    href={project.githubUrl}
+    target="_blank"
+    rel="noopener noreferrer"
+    className="inline-flex w-full items-center justify-center rounded-xl bg-black px-4 py-3 font-medium text-white hover:bg-neutral-800"
+  >
+    Ouvrir sur GitHub
+  </a>
+
+</div>
           </aside>
         </div>
 

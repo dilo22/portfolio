@@ -9,6 +9,7 @@ export type Project = {
   extendedDescription? : string;
   tech: string[];
   githubUrl: string;
+  demoUrl?: string; 
   imagePath: string;
   tags: string[];
 };
@@ -300,6 +301,22 @@ Réalisé en Python, ce projet met en avant mes compétences en gestion de bases
   },
 
   // Web
+  {
+  title: "DILO FUN",
+  category: "Web",
+  shortDescription:
+    "Plateforme web ludique et interactive pensée pour offrir une expérience dynamique et créative.",
+  longDescription: `Développement d’un site web interactif centré sur une expérience ludique et immersive.
+
+Le projet met l’accent sur une interface engageante, une navigation fluide et une présentation visuelle soignée afin de proposer un univers cohérent et attractif.
+
+Il valorise mes compétences en développement web, structuration d’interface, conception d’expérience utilisateur et intégration visuelle.`,
+  tech: ["Next.js", "TypeScript", "Tailwind CSS"],
+  githubUrl: "https://github.com/dilo22/DiloFun",
+  demoUrl: "https://dilo-fun.vercel.app", 
+  imagePath: "/projects/dilofun.png",
+  tags: ["Web", "UI", "Créatif", "Interactif"]
+},
   {
     title: "AirFind – Gestion des objets trouvés",
     category: "Web",
