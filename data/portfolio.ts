@@ -330,6 +330,22 @@ Il valorise mes compétences en développement web, structuration d’interface,
     tags: ["Node.js", "PostgreSQL", "Full-stack", "CRUD"]
   },
   {
+    title: "MyQR – Générateur de QR codes personnalisés",
+    category: "Web",
+    shortDescription:
+      "Création de QR codes personnalisés avec design sur mesure et suivi des QR codes dynamiques.",
+    longDescription:
+      `Développement d’une application web permettant de générer des QR codes statiques et dynamiques avec personnalisation avancée du design.
+
+L’utilisateur peut adapter l’apparence de ses QR codes en modifiant les couleurs, les formes, l’intégration visuelle et le style global afin de créer des visuels cohérents avec son identité.
+
+Le projet intègre également un système de suivi pour les QR codes dynamiques, permettant d’analyser leur utilisation et de centraliser leur gestion. Cette application met en avant mes compétences en développement web full-stack, conception d’interface moderne et création d’outils numériques orientés utilisateur.`,
+    tech: ["Next.js", "TypeScript", "Tailwind CSS", "Node.js"],
+    githubUrl: "https://github.com/dilo22/MyQR",
+    imagePath: "/projects/myqr.png",
+    tags: ["QR Code", "Web", "Personnalisation", "Tracking"]
+  },
+  {
     title: "MiouMarket – Site e-commerce spécialisé",
     category: "Web",
     shortDescription:
