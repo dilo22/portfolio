@@ -341,7 +341,7 @@ L’utilisateur peut adapter l’apparence de ses QR codes en modifiant les coul
 
 Le projet intègre également un système de suivi pour les QR codes dynamiques, permettant d’analyser leur utilisation et de centraliser leur gestion. Cette application met en avant mes compétences en développement web full-stack, conception d’interface moderne et création d’outils numériques orientés utilisateur.`,
     tech: ["Next.js", "TypeScript", "Tailwind CSS", "Node.js"],
-    githubUrl: "https://github.com/dilo22/MyQR",
+    githubUrl: "https://github.com/dilo22/Qr-Code",
     imagePath: "/projects/myqr.png",
     tags: ["QR Code", "Web", "Personnalisation", "Tracking"]
   },
