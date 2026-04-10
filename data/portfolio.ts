@@ -1,4 +1,4 @@
-export type ProjectCategory = "Technique" | "Web";
+export type ProjectCategory = "Technique" | "Web" | "Cybersécurité";
 
 export type Project = {
   slug: string;
@@ -100,6 +100,36 @@ Ce projet met en avant la modélisation orientée objet (robots, arène, obstacl
   imagePath: "/projects/robowars.png",
   tags: ["Python", "Tkinter", "IA simple", "Network"]
 },
+{
+  title: "DiloPass",
+  category: "Cybersécurité",
+  shortDescription:
+    "Gestionnaire de mots de passe desktop chiffré avec coffre-fort, notes sécurisées, coffre de fichiers et audit.",
+  longDescription: `Développement de DiloPass, une application desktop de gestion de secrets en Python avec CustomTkinter.
+
+  Le projet implémente un coffre-fort chiffré (identifiants/mots de passe), des notes sécurisées, un coffre de fichiers chiffrés, un générateur de mots de passe/phrases secrètes et un module d’audit de sécurité (faiblesse, doublons, ancienneté).
+
+  La sécurité repose sur un mot de passe maître hashé avec bcrypt, une dérivation de clé PBKDF2-HMAC-SHA256 et un chiffrement Fernet (AES-256). Les données sont stockées localement via SQLite, avec verrouillage automatique, effacement du presse-papiers et rotation du mot de passe maître avec migration chiffrée des données.`,
+
+  extendedDescription: `DiloPass est un gestionnaire de secrets local orienté sécurité et ergonomie, conçu pour offrir une alternative simple à un password manager desktop.
+
+  L’application démarre avec un flux de création/déverrouillage du mot de passe maître. Celui-ci n’est jamais stocké en clair : seul son hash bcrypt est conservé, et la clé de chiffrement est dérivée avec PBKDF2-HMAC-SHA256 à partir d’un sel aléatoire.
+
+  Les fonctionnalités principales incluent :
+  - un coffre-fort d’identifiants (CRUD, catégories, recherche, favoris, copie rapide),
+  - des notes sécurisées chiffrées,
+  - un coffre de fichiers avec dossiers/sous-dossiers, import/export et chiffrement binaire,
+  - un générateur avancé (longueur, jeux de caractères, exclusion de caractères ambigus, mode passphrase),
+  - un audit de sécurité calculant un score global selon mots de passe faibles, doublons et ancienneté.
+
+  Le stockage repose sur SQLite avec séparation logique des modules (crypto, base de données, UI). L’interface est construite avec CustomTkinter autour d’une architecture modulaire multi-vues (dashboard, vault, notes, file vault, audit, settings), avec feedback utilisateur, actions rapides et paramètres de sécurité (verrouillage auto, nettoyage presse-papiers, changement du mot de passe maître avec migration des données chiffrées).`,
+
+  tech: ["Python", "CustomTkinter", "SQLite", "cryptography", "bcrypt", "Pillow", "pyperclip"],
+  githubUrl: "https://github.com/dilo22/DiloPass",
+  imagePath: "/projects/dilopass.png",
+  tags: ["Security", "Encryption", "Desktop App", "SQLite", "Password Manager", "UI/UX"]
+},
+
   {
   title: "Simulation de bateau – Moteur physique 2D",
   category: "Technique",
